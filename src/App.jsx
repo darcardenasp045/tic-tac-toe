@@ -10,6 +10,7 @@ const TURNS = {
 
 
 //vamos a crear un componente que se llama square, luego de crearlo vamos a ponerle props llamdas chisldren, updateBoard, isSelected, index, estas props son las que vamos a usar en el componente square, 
+// eslint-disable-next-line react/prop-types
 const Square = ({children, updateBoard, isSelected,  index}) => {
   //luego se crea un consnt llamada className, en la cual tenemos una ternaria donde preguntamos si es esta seleccionado o no, despues se crea un handleClick en el cual ponemos una funcion llamada 
   const className = `square ${isSelected ? 'is-selected' : ''}`
@@ -87,7 +88,7 @@ const updateBoard = (index) => {
     const newWinner = checkWinner(newBoard)
     if(newWinner){
       confetti()+
-      
+
       setWinner(newWinner)
     }else if(checkEndGame(newBoard)){
       setWinner(false)
